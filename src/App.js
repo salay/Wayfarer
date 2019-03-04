@@ -1,27 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from './Header'
+import Footer from './Footer'
+import Landing from './Landing/Landing';
+import Profile from './Profile/Profile';
+import Posts from './Posts/Posts';
+import { Switch, Route} from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
-
-
       <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header />
+        <Switch>
+            <Route path="/" exact strict component={Landing}/>
+            <Route path="/profile"  exact strict component={Profile}/>
+            <Route path="/posts"  exact strict component={Posts}/>
+        </Switch>
+        <Footer />
       </div>
-
     );
   }
 }
