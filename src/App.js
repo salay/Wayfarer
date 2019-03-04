@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './Header'
-import Footer from './Footer'
+import Header from './Header/Header'
+import Footer from './Footer/Footer'
 import Landing from './Landing/Landing';
 import Profile from './Profile/Profile';
 import Posts from './Posts/Posts';
