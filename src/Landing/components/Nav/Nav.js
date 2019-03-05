@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Modalform from './modal/modal'
+import './Nav.css'
 
 class Nav extends Component {
     render() {
         return (
-            <div>
+            <header>
                 <nav>
                     <ul>
                         <li>
@@ -12,7 +13,7 @@ class Nav extends Component {
                         </li>
                     </ul>
                 </nav>
-            </div>
+            </header>
         );
     }
 }

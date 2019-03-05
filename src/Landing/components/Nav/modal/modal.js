@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
+import './modal.css'
 
 const customStyles = {
   content : {
@@ -56,7 +57,6 @@ class Modalform extends Component {
 
           <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
           <button onClick={this.closeModal}>close</button>
-          <div>I am a modal</div>
           <form>
             <input />
             <button>tab navigation</button>
