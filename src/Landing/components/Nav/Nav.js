@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
+import './Nav.css'
+
 
 class Nav extends Component {
    render() {
        return (
-           <div>
-               <nav>
-                   <ul class="Nav">
-                       <li class="column">Sign Up</li>
-                       <li class="column">Sign In</li>
-                   </ul>
-               </nav>
-           </div>
+           
+           
+           <header id="headWrap">
+           <h1>App Name</h1>
+            <nav>
+                 <ul>
+                    <li>
+                        <a href="#Sign In">Sign In</a>
+                        <a href="#Sign Up">Sign Up</a>
+                    </li>
+                 </ul>
+            </nav>
+           </header>
        );
    }
 }

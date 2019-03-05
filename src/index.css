@@ -24,17 +24,7 @@
     monospace;
 } */
 
-.Nav {
-  display: flex;
-  justify-content: flex-end;
-  list-style: none;
-  padding: 0px 50px 0px 50px;
-  /*margin: 0px 20px 0px 10px;*/
-  text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
-  background-color: white;
 
-} 
 
 
 
