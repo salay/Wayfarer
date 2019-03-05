@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-
+import Nav from './components/Nav/Nav'
 
 class Landing extends Component {
     render() {
       return (
         <div>
-            <p> Landing page </p>
+            <p> Welcome </p>
+            <Nav />
         </div>
       );
     }
