@@ -10,11 +10,11 @@ class Landing extends Component {
       return (
         <div>
 
-            <p> Landing page </p>
+            
+            <Nav />
             <Hero />
             <About />
             <Footer />
->>>>>>> 5aef670a84754c1ba2d1f7aa453bda401e4a5b64
         </div>
       );
     }
