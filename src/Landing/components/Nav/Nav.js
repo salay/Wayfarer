@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import './Nav.css'
 
 
@@ -20,6 +21,25 @@ class Nav extends Component {
            </header>
        );
    }
+=======
+import Modalform from './modal/modal'
+import './Nav.css'
+
+class Nav extends Component {
+    render() {
+        return (
+            <header>
+                <nav>
+                    <ul>
+                        <li>
+                            <Modalform />
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        );
+    }
+>>>>>>> alom
 }
 
 export default Nav;
