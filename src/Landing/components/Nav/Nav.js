@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Modalform from './modal/modal'
 
 class Nav extends Component {
     render() {
@@ -6,7 +7,9 @@ class Nav extends Component {
             <div>
                 <nav>
                     <ul>
-                        <li>Sign up</li>
+                        <li>
+                            <Modalform />
+                        </li>
                     </ul>
                 </nav>
             </div>
