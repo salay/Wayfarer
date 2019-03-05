@@ -8,17 +8,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-=======
->>>>>>> siri:src/App/App.js
         <Switch>
             <Route path="/" exact strict component={Landing}/>
             <Route path="/profile"  exact strict component={Profile}/>
             <Route path="/posts"  exact strict component={Posts}/>
         </Switch>
-
-=======
->>>>>>> siri:src/App/App.js
       </div>
     );
   }
