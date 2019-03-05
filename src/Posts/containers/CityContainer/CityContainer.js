@@ -10,14 +10,18 @@ class CityContainer extends Component {
       cities: []
     }
   }
+
+
   componentDidMount(){
     this.fetchData()
   }
 
   fetchData(){
-    CitiesModel.allEndpoints().then( (res) => {
+    CitiesModel.allEndpoints().then( (res) =>  
+   // {/* pulling the city data from the citiesModel API*/}
+    { console.log(res.data)
       this.setState ({
-        cities: res.data.cities,
+        cities: res.data,  // {/* setting the state of the empty cities array equal to the cities data from the API defined in the city models*/}
         city: ''
       })
     })
@@ -28,7 +32,7 @@ class CityContainer extends Component {
     return (
       <div>
         <CityRenderBox
-          cities={this.state.cities} />
+          cities={this.state.cities} /> {/* passing cities as a prop to the cityrender box. cities is equal to the current state of the cities array which comes from the API */}
       </div>
     )
   }

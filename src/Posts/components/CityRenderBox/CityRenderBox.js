@@ -4,17 +4,19 @@ import City from '../City/City'
 class CityRenderBox extends Component {
   render(){
 
-    let cities = this.props.cities.map( (city) => {
-      return (
+    let Cities = this.props.cities.map( (theCity) => { // {/* prop passed down from citycontainer which is the array of cities from the API*/}
+      return (                                      //  {/* maps over the cities array and passing unique props to the city.js file */}
         <City
-          key={city._id}
-          city={city}/>
+          key={theCity._id}
+          city={theCity.city}
+          image={theCity.image}
+          country= {theCity.country} />
       )
     })
-    console.log({cities})
+    console.log({Cities})
     return(
       <ul>
-        {cities}
+        {Cities}  {/* rendering the array above */}
       </ul>
     )
     
