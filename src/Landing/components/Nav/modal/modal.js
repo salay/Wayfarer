@@ -55,10 +55,10 @@ class Modalform extends Component {
           contentLabel="Example Modal"
         >
 
-          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-          <button onClick={this.closeModal}>close</button>
+          <h2 ref={subtitle => this.subtitle = subtitle}>Sign Up!</h2>
+          <button id="modalButton" onClick={this.closeModal}>close</button>
           <form>
-            <input />
+            <input placeholder="Full Name" type="text" />
             <button>tab navigation</button>
             <button>stays</button>
             <button>inside</button>
