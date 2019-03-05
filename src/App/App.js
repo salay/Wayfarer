@@ -15,7 +15,6 @@ class App extends Component {
             <Route path="/posts"  exact strict component={Posts}/>
         </Switch>
 
-
       </div>
     );
   }
