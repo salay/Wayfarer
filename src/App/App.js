@@ -9,14 +9,11 @@ class App extends Component {
     return (
       <div className="App">
 
-
         <Switch>
             <Route path="/" exact strict component={Landing}/>
             <Route path="/profile"  exact strict component={Profile}/>
             <Route path="/posts"  exact strict component={Posts}/>
         </Switch>
-
-
       </div>
     );
   }
