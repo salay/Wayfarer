@@ -10,7 +10,7 @@ import Paris from './paris.jpg'
 class Hero extends Component {
   render() {
       return (
-          <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
+          <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false} showArrows={false} showIndicators={false}>
               <div>
                   <img src={SanFrancisco} />
               </div>

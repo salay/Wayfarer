@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Nav.css'
+import ModalSignUp from './modal/modal'
 
 
 class Nav extends Component {
@@ -9,14 +10,17 @@ class Nav extends Component {
            
            <header id="headWrap">
            <h1>App Name</h1>
-            <nav>
-                 <ul>
+            <nav id="navwrap">
+                 {/* <ul>
                     <li>
                         <a href="#Sign In">Sign In</a>
                         <a href="#Sign Up">Sign Up</a>
                     </li>
-                 </ul>
+                 </ul> */}
+                 <button id="signUpButton">Sign In</button>
+                 <ModalSignUp />
             </nav>
+            
            </header>
        );
    }
