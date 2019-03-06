@@ -56,12 +56,12 @@ class ModalSignUp extends Component {
         >
 
           <h2 ref={subtitle => this.subtitle = subtitle}>Sign Up!</h2>
-          <button id="modalButton" onClick={this.closeModal}>close</button>
           <form id="formwrap">
             <input placeholder="Full Name" type="text" />
             <input placeholder="Email" type="text" />
             <input placeholder="Password" type="text" />
-            <button>Submit</button>
+            <button id="modalButton">Submit</button>
+            <button id="modalButton" onClick={this.closeModal}>Cancel</button>
           </form>
         </Modal>
       </div>

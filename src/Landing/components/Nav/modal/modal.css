@@ -13,4 +13,10 @@
     display: flex;
     flex-direction: column;
     align-content: space-around;
+    height: auto;
+}
+
+form {
+    width:200px;
+    height: 100px;
 }
