@@ -17,7 +17,7 @@ const customStyles = {
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 // Modal.setAppElement('#yourAppElement')
 
-class Modalform extends Component {
+class ModalSignUp extends Component {
   constructor() {
     super();
 
@@ -46,7 +46,7 @@ class Modalform extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.openModal}>Open Modal</button>
+        <button id="signUpButton" onClick={this.openModal}>Sign Up!</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -57,12 +57,11 @@ class Modalform extends Component {
 
           <h2 ref={subtitle => this.subtitle = subtitle}>Sign Up!</h2>
           <button id="modalButton" onClick={this.closeModal}>close</button>
-          <form>
+          <form id="formwrap">
             <input placeholder="Full Name" type="text" />
-            <button>tab navigation</button>
-            <button>stays</button>
-            <button>inside</button>
-            <button>the modal</button>
+            <input placeholder="Email" type="text" />
+            <input placeholder="Password" type="text" />
+            <button>Submit</button>
           </form>
         </Modal>
       </div>
@@ -70,4 +69,4 @@ class Modalform extends Component {
   }
 }
 
-export default Modalform;
+export default ModalSignUp;
