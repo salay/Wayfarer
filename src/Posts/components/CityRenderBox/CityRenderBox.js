@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import City from '../City/city'
+import "./CityRenderBox.css"
 
 class CityRenderBox extends Component {
   render(){
@@ -15,9 +16,9 @@ class CityRenderBox extends Component {
     })
     console.log({Cities})
     return(
-      <ul>
+      <div id="cityRenderBox">
         {Cities}  {/* rendering the array above */}
-      </ul>
+      </div>
     )
     
   }

@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import './modal.css'
+import Axios from 'axios';
 
 const customStyles = {
-  content : {
+  content : {    
     top                   : '50%',
     left                  : '50%',
     right                 : 'auto',
@@ -17,20 +18,28 @@ const customStyles = {
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 // Modal.setAppElement('#yourAppElement')
 
-class ModalSignUp extends Component {
+class ModalSignIn extends Component {
+
   constructor() {
     super();
-
+    //state is a variable container with all the variables that react wants to access on the frontend
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
     };
 
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
+  
+  // handleInput = event => {
+  //   console.log(event)
+  //   this.setState({
+  //     [event.target.name]: event.target.value
+  //   })
+  // }
 
-  openModal() {
+  openModal = () => {
     this.setState({modalIsOpen: true});
   }
 
@@ -44,9 +53,10 @@ class ModalSignUp extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div>
-        <button id="signUpButton" onClick={this.openModal}>Sign Up!</button>
+        <button id="signUpButton" onClick={this.openModal}>Sign In!</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -55,12 +65,17 @@ class ModalSignUp extends Component {
           contentLabel="Example Modal"
         >
 
-          <h2 ref={subtitle => this.subtitle = subtitle}>Sign Up!</h2>
+          <h2 ref={subtitle => this.subtitle = subtitle}>Sign In!</h2>
           <form id="formwrap">
-            <input placeholder="Full Name" type="text" />
-            <input placeholder="Email" type="text" />
-            <input placeholder="Password" type="text" />
-            <button id="modalButton">Submit</button>
+      
+            <input placeholder="Email" type="text" email="email" name="email"
+              onChange={this.props.handleInput}/>
+
+            <input placeholder="Password" type="password" password="password" name="password"
+             onChange={this.props.handleInput}/>
+
+            <button id="modalButton" onClick={ this.props.onSignIn }>Sign In</button>
+
             <button id="modalButton" onClick={this.closeModal}>Cancel</button>
           </form>
         </Modal>
@@ -69,4 +84,4 @@ class ModalSignUp extends Component {
   }
 }
 
-export default ModalSignUp;
+export default ModalSignIn;
