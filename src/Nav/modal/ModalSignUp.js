@@ -77,6 +77,8 @@ class ModalSignUp extends Component {
             onChange={this.props.handleInput} name="fullName"/>
             <input placeholder="Email" type="text" email="email" name="email"
               onChange={this.props.handleInput}/>
+            <input placeholder="Username" type="text" name="username"
+              onChange={this.props.handleInput}/>
             <input placeholder="Password" type="password" password="password" name="password"
              onChange={this.props.handleInput}/>
             <button id="modalButton" onClick={ this.props.onSignUp }>Submit</button>

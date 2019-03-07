@@ -11,7 +11,8 @@ class Nav extends Component {
        if (this.props.isLoggedIn){
         return (
             <header id="headWrap">
-            <h1>App Name</h1>
+            <h1>Pathfinder</h1>
+            <h4>Find Your Way There</h4>
              <nav id="navwrap">
 
              Signed in as {this.props.name}
@@ -26,7 +27,10 @@ class Nav extends Component {
        } else {
         return (
             <header id="headWrap">
-            <h1>App Name</h1>
+            <div>
+            <h1>Pathfinder</h1>
+            <h4>Find Your Way There</h4>
+            </div>
              <nav id="navwrap">
                 <ModalSignIn handleInput = {this.props.handleInput} 
                  onSignIn={this.props.onSignIn}/>

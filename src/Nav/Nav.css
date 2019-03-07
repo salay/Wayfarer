@@ -1,11 +1,15 @@
  #headWrap {
       display: flex;
       justify-content: space-between;
-      text-transform: uppercase;
+      font-family: 'Kaushan Script', cursive;
       font-size: 15px;
       height: 60px;
+      color: burlywood; 
+      
  } 
-  
+ 
+ 
+
 nav a {
       display: inline-block;
       padding: 20px;
@@ -22,10 +26,9 @@ a:link {
 #navwrap{
     display: flex;
     flex-direction: row;
-    
-    
 
 }
+
 header {
     height: 30px;
 

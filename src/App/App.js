@@ -4,10 +4,9 @@ import Landing from '../Landing/Landing';
 import Profile from '../Profile/Profile';
 import Posts from '../Posts/Posts';
 import { Switch, Route} from 'react-router-dom';
-
 import UserModel from "../models/UserModel.js";
-
 import Nav from "../Nav/Nav"
+
 class App extends Component {
   state = {
     name: '',
@@ -33,6 +32,7 @@ class App extends Component {
     console.log(e)
     this.setState({
       name: '',
+      username: '',
       email: '',
       password: '',
       isLoggedIn: false
@@ -60,12 +60,12 @@ class App extends Component {
     console.log("this is login in the console. button is clicked")
     //let name = this.state.fullName
     let email = this.state.email
-    let username = this.state.username
+    //let username = this.state.username
 
     let params = {
       //fullName: this.state.fullName,
       email: this.state.email,
-     // username: this.state.username,
+      //username: this.state.username,
       password: this.state.password
     };
     UserModel.signIn(params)
@@ -116,7 +116,9 @@ class App extends Component {
       onSignUp={this.onSignUp}
       onSignIn={this.onSignIn}
       />
-          <Switch>
+
+      {/* below- is if true */}
+          <Switch> 
             {/* eexact strict  makes sure url parametrs match */}
               <Route path="/profile"  component={Profile}/>
               <Route path="/posts"  component={Posts}/>
@@ -134,6 +136,7 @@ class App extends Component {
       onSignUp={this.onSignUp}
       onSignIn={this.onSignIn}
       />
+      {/* Below -is if false */}
           <Switch>
               <Route path="/" exact strict component={Landing}/>
               {/* <Route path="*"   component={<h1>404</h1>}/> */}

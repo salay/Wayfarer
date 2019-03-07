@@ -68,9 +68,9 @@ class ModalSignIn extends Component {
           <h2 ref={subtitle => this.subtitle = subtitle}>Sign In!</h2>
           <form id="formwrap">
       
-            <input placeholder="Email" type="text" email="email" name="email"
+            <input placeholder="Email" type="text" name="email"
               onChange={this.props.handleInput}/>
-
+            
             <input placeholder="Password" type="password" password="password" name="password"
              onChange={this.props.handleInput}/>
 

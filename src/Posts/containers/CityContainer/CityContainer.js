@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import CitiesModel from '/Users/default/Desktop/WDI-51/GA Projects/Wayfarer/wayfarer-frontend/src/models/CitiesModel.js'
+import CitiesModel from '../../../models/CitiesModel.js'
 import CityRenderBox from '../../components/CityRenderBox/CityRenderBox';
 
 class CityContainer extends Component {
