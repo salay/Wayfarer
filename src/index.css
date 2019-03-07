@@ -25,11 +25,15 @@
 } */
 
 
+* {
+  background: 
+#465766
+}
 
 
 
 body {
-  background-image: url('images/teal.jpg');
+  background-image: url('images/path.jpg');
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: fill;

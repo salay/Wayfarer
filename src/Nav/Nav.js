@@ -6,12 +6,14 @@ import Logout from './modal/Logout'
 import {Link} from 'react-router-dom';
 
 
+
 class Nav extends Component {
    render() {
        if (this.props.isLoggedIn){
         return (
             <header id="headWrap">
-            <h1>App Name</h1>
+            <h1>Pathfinder</h1>
+            <h4>Find your way there...</h4>
              <nav id="navwrap">
 
              Signed in as {this.props.name}
@@ -26,7 +28,10 @@ class Nav extends Component {
        } else {
         return (
             <header id="headWrap">
-            <h1>App Name</h1>
+            <div class="title">
+            <h1>Pathfinder</h1>
+            <h4>Find your way there...</h4>
+            </div>
              <nav id="navwrap">
                 <ModalSignIn handleInput = {this.props.handleInput} 
                  onSignIn={this.props.onSignIn}/>

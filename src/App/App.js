@@ -4,15 +4,16 @@ import Landing from '../Landing/Landing';
 import Profile from '../Profile/Profile';
 import Posts from '../Posts/Posts';
 import { Switch, Route} from 'react-router-dom';
-
 import UserModel from "../models/UserModel.js";
-
 import Nav from "../Nav/Nav"
+
+
 class App extends Component {
   state = {
     name: '',
     username: '',
     email: '',
+    currentcity: '',
     isLoggedIn: false
   }
 
@@ -35,6 +36,8 @@ class App extends Component {
       name: '',
       email: '',
       password: '',
+      username: '',
+      currentcity: '',
       isLoggedIn: false
     })
     localStorage.clear()
@@ -59,13 +62,12 @@ class App extends Component {
     event.preventDefault()
     console.log("this is login in the console. button is clicked")
     //let name = this.state.fullName
-    let email = this.state.email
     let username = this.state.username
 
     let params = {
       //fullName: this.state.fullName,
       email: this.state.email,
-     // username: this.state.username,
+      //username: this.state.username,
       password: this.state.password
     };
     UserModel.signIn(params)
@@ -83,11 +85,13 @@ class App extends Component {
     let name = this.state.fullName
     let email = this.state.email
     let username = this.state.username
+    let currentcity = this.state.currentcity
 
     let params = {
       fullName: this.state.fullName,
       email: this.state.email,
       username: this.state.username,
+      currentcity: this.state.currentcity,
       password: this.state.password
     };
     UserModel.signUp(params)

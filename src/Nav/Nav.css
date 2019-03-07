@@ -1,9 +1,10 @@
  #headWrap {
       display: flex;
       justify-content: space-between;
-      text-transform: uppercase;
-      font-size: 15px;
-      height: 60px;
+      font-family: 'Kaushan Script', cursive;
+      font-weight: lighter;
+      height: 150px;
+      color: whitesmoke
  } 
   
 nav a {
@@ -22,11 +23,22 @@ a:link {
 #navwrap{
     display: flex;
     flex-direction: row;
-    
-    
-
 }
+
 header {
     height: 30px;
 
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+}
+
+.title h1 {
+    font-size: 60px;
+}
+
+.title h4 {
+    font-size: 26px;
 }
