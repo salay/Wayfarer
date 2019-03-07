@@ -11,7 +11,7 @@ class CityContainer extends Component {
     }
   }
 
-
+ 
   componentDidMount(){
     this.fetchData()
   }

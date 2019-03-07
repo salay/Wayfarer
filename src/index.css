@@ -25,11 +25,15 @@
 } */
 
 
+* {
+  background: 
+#465766
+}
 
 
 
 body {
-  background-image: url('images/rawpixel-603019-unsplash.jpg');
+  background-image: url('images/path.jpg');
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: fill;

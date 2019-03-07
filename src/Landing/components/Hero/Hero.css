@@ -1,6 +1,12 @@
 div {
     width: auto;
-    height:576px;
+    height: 700px;
+    /* height:576px;
+    position: relative; */
+    /* top: -40px; */
+    
+    
+
 }
 
 img {

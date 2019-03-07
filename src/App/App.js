@@ -9,9 +9,11 @@ import Nav from "../Nav/Nav"
 
 class App extends Component {
   state = {
-    name: '',
+    fullname: '',
     username: '',
     email: '',
+    currentcity: '',
+    // image: '', this is a stretch goal
     isLoggedIn: false
   }
 
@@ -31,16 +33,15 @@ class App extends Component {
     e.preventDefault()
     console.log(e)
     this.setState({
-      name: '',
-      username: '',
+      fullname: '',
       email: '',
       password: '',
+      username: '',
+      currentcity: '',
       isLoggedIn: false
     })
     localStorage.clear()
   }
-
-
 
 
   handleInput = event => {
@@ -70,8 +71,14 @@ class App extends Component {
     };
     UserModel.signIn(params)
       .then(response => {
+        console.log(response.data)
         localStorage.token = response.data.signedJwt
+        localStorage.id = response.data.user._id
         this.setState({
+          fullname: response.data.user.fullname,
+          username: response.data.user.username,
+          email: response.data.user.email,
+          currentcity: response.data.user.currentcity,
           isLoggedIn: true
         })
       })
@@ -80,20 +87,28 @@ class App extends Component {
 
   onSignUp = (event2) => {
     event2.preventDefault()
-    let name = this.state.fullName
+    let fullname = this.state.fullname
     let email = this.state.email
     let username = this.state.username
+    let currentcity = this.state.currentcity
 
     let params = {
-      fullName: this.state.fullName,
+      fullname: this.state.fullname,
       email: this.state.email,
       username: this.state.username,
+      currentcity: this.state.currentcity,
       password: this.state.password
     };
     UserModel.signUp(params)
       .then(response => {
+        console.log(response.data)
         localStorage.token = response.data.signedJwt
+        localStorage.id = response.data.user._id
         this.setState({
+
+          //set state here!
+
+
           isLoggedIn: true
         })
       })
@@ -120,7 +135,13 @@ class App extends Component {
       {/* below- is if true */}
           <Switch> 
             {/* eexact strict  makes sure url parametrs match */}
-              <Route path="/profile"  component={Profile}/>
+              <Route 
+              fullname={this.state.fullname}
+              username={this.state.username}
+              email={this.state.email}
+              currentcity={this.state.currentcity}
+              path="/profile"  
+              component={Profile}/>
               <Route path="/posts"  component={Posts}/>
               <Route path="/" exact strict component={Landing}/>
               {/* <Route path="*"   component={<h1>404</h1>}/> */}

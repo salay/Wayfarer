@@ -74,11 +74,13 @@ class ModalSignUp extends Component {
             //onchange means whenever the input box detects a change (ex. type something in)
             //then it calls a function called handleInput
             //look above the render function for handleInput function
-            onChange={this.props.handleInput} name="fullName"/>
-            <input placeholder="Email" type="text" email="email" name="email"
+            //need to add 2 field: username and currentcity
+            onChange={this.props.handleInput} name="fullname"/>
+            <input placeholder="Email" type="email" email="email" name="email"
               onChange={this.props.handleInput}/>
-            <input placeholder="Username" type="text" name="username"
-              onChange={this.props.handleInput}/>
+            <input placeholder="Current City" type="text" name="currentcity" onChange={this.props.handleInput}/>
+
+            <input placeholder="User Name" type="text" name="username" onChange={this.props.handleInput}/>
             <input placeholder="Password" type="password" password="password" name="password"
              onChange={this.props.handleInput}/>
             <button id="modalButton" onClick={ this.props.onSignUp }>Submit</button>
