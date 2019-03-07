@@ -75,7 +75,7 @@ class ModalSignUp extends Component {
             //then it calls a function called handleInput
             //look above the render function for handleInput function
             //need to add 2 field: username and currentcity
-            onChange={this.props.handleInput} name="fullName"/>
+            onChange={this.props.handleInput} name="fullname"/>
             <input placeholder="Email" type="email" email="email" name="email"
               onChange={this.props.handleInput}/>
             <input placeholder="Current City" type="text" name="currentcity" onChange={this.props.handleInput}/>

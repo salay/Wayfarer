@@ -5,6 +5,12 @@ class UserModel {
     let request = axios.get(`http://localhost:3001/users`)
     return request
   }
+
+  static oneUser(userId){
+    let request = axios.get(`http://localhost:3001/users/${userId}`)
+    return request
+  }
+
   static signUp(data){
     //promises is how you handle things asynchronously 
     //axios uses a promise.... when axios comes back, then it'll 
