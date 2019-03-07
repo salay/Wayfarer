@@ -1,0 +1,8 @@
+#cityRenderBox {
+ color: navy; 
+ background: lightsteelblue;
+ /* opacity: .7; */
+ overflow: scroll;
+ display: flex;
+ flex-direction: column;
+}
