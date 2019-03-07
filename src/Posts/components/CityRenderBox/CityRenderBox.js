@@ -14,6 +14,15 @@ class CityRenderBox extends Component {
           country= {theCity.country} />
       )
     })
+
+  //   <div class="city" data-cities-index={this.props.city.id}>
+  //   <div class="cityName">
+  //   <span>{this.props.city }, </span>
+  //   <span> { this.props.country}</span>
+  //   </div>
+  //   <img src = {this.props.image} />
+  // </div> 
+
     console.log({Cities})
     return(
       <div id="cityRenderBox">

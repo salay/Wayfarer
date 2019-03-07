@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Post from '../Post/Post'
-
+import "./PostsRenderBox.css"
 class CityRenderBox extends Component {
   render(){
     let Posts = this.props.posts.map( (thePost) => {
