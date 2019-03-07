@@ -3,6 +3,7 @@ import './Nav.css'
 import ModalSignUp from './modal/ModalSignUp'
 import ModalSignIn from './modal/ModalSignIn'
 import Logout from './modal/Logout'
+import {Link} from 'react-router-dom';
 
 
 class Nav extends Component {
@@ -15,6 +16,9 @@ class Nav extends Component {
 
              Signed in as {this.props.name}
              <Logout handleLogOut={this.props.handleLogOut}/>
+             <Link to={'/'}>Home</Link>
+             <Link to={'/posts'}>Posts</Link>
+             <Link to={'/profile'}>Profile</Link>
              </nav>
              
             </header>
