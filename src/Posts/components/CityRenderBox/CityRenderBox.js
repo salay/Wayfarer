@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import City from '../City/City'
+import City from '../City/city'
 
 class CityRenderBox extends Component {
   render(){
