@@ -11,6 +11,11 @@ class UserModel {
     return request
   }
 
+ static updateUser(userId, updatedUser){
+  let request = axios.put(`${`http://localhost:3001/users/`}/${userId}`, updatedUser)
+  return request
+ }
+ 
   static signUp(data){
     //promises is how you handle things asynchronously 
     //axios uses a promise.... when axios comes back, then it'll 

@@ -11,7 +11,10 @@ class PostsContainer extends Component {
         username: "bob",
         email: "bob@bob.com",
         fullName: "Bobby Bob",
-        currentCity: "Oaklander",
+        currentCity: "Oakland",
+        isEditing: false,
+        display: "display: 'block'",
+        hide: "display: 'none'"
         // IMAGE
     }
   }
@@ -33,13 +36,30 @@ class PostsContainer extends Component {
     })
   } 
 
+
+  openEditors = () => {
+    console.log("editor is open")
+    console.log(this)
+    this.setState({
+      isEditing: true
+    })
+  }
+
+  //failing to initialize the value at the point that I'm calling openEditors... maybe componentdidmount
+
+
+
   render(){
       console.log(this.state.username)
 
+
+      console.log(this.state.isEditing)
       console.log(localStorage.id)
-    return (
-     
-      <div id="userProfile">
+
+      if (!this.props.isEditing){
+        return ( 
+
+      <div id="displayedProfile" style={{display:"block"}}>
         <span>
             Username: {this.state.username}
         </span>
@@ -56,14 +76,30 @@ class PostsContainer extends Component {
             Current City: {this.state.currentCity}
         </span>
         <br/>
-       <button>Edit</button>
-       
-        {/* <input> </input>
-        <input> </input>
-        <input> </input>
-        <input> </input> */}
-     </div>
-    )
+
+       <button onClick ={this.openEditors}>Edit</button>
+        </div>
+
+        )
+      }
+        else {
+      return(
+        <div id="editingProfile" style={{display: "block"}}>
+        <input placeholder={this.state.username}/>
+        <br/>
+        <input placeholder = {this.state.fullName}/>
+        <br/>
+        <input placeholder ={this.state.email}/>
+        <br/>
+        <input placeholder ={this.state.currentCity} />
+        <br/>
+
+       <button onClick ={this.saveUpdatedProfile}>Save</button>
+        </div>
+      )
+     }
+        
+    
   }
 }
 

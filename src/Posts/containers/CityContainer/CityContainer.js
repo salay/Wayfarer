@@ -32,6 +32,7 @@ class CityContainer extends Component {
     return (
       <div>
         <CityRenderBox
+          getCityName = {this.props.getCityName}
           cities={this.state.cities} /> {/* passing cities as a prop to the cityrender box. cities is equal to the current state of the cities array which comes from the API */}
       </div>
     )
