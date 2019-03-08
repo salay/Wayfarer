@@ -1,6 +1,11 @@
 import React, {Component} from 'react'
 import City from '../City/city'
+<<<<<<< HEAD
 
+=======
+import "./CityRenderBox.css"
+ 
+>>>>>>> cc878c7f9da4987baee99b5483ff17ed495145a8
 class CityRenderBox extends Component {
   render(){
 
@@ -13,11 +18,20 @@ class CityRenderBox extends Component {
           country= {theCity.country} />
       )
     })
+
+  //   <div class="city" data-cities-index={this.props.city.id}>
+  //   <div class="cityName">
+  //   <span>{this.props.city }, </span>
+  //   <span> { this.props.country}</span>
+  //   </div>
+  //   <img src = {this.props.image} />
+  // </div> 
+
     console.log({Cities})
     return(
-      <ul>
+      <div id="cityRenderBox">
         {Cities}  {/* rendering the array above */}
-      </ul>
+      </div>
     )
     
   }

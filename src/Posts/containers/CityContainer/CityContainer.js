@@ -1,5 +1,9 @@
 import React, {Component} from 'react'
+<<<<<<< HEAD
 import CitiesModel from '../../../models/CitiesModel'
+=======
+import CitiesModel from '../../../models/CitiesModel.js'
+>>>>>>> cc878c7f9da4987baee99b5483ff17ed495145a8
 import CityRenderBox from '../../components/CityRenderBox/CityRenderBox';
 
 class CityContainer extends Component {
@@ -11,7 +15,7 @@ class CityContainer extends Component {
     }
   }
 
-
+ 
   componentDidMount(){
     this.fetchData()
   }

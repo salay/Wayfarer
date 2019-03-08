@@ -1,0 +1,26 @@
+#signUpButton {
+    background-color: black;
+    margin: 10px;
+    height:30px;
+}
+
+#modalButton {
+    margin: 10px 0;
+    background-color: black;
+}
+
+#formwrap{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    height: auto;
+}
+
+form {
+    width:200px;
+    height: 100px;
+}
+
+input {
+    color: black;
+}

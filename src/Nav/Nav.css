@@ -1,0 +1,50 @@
+ #headWrap {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Kaushan Script', cursive;
+      font-weight: lighter;
+      height: 150px;
+      color: whitesmoke;
+      /* position: relative;
+      top: 30px;
+      z-index: 1;
+      padding: 3em; */
+ } 
+  
+nav a {
+      display: inline-block;
+      padding: 20px;
+      
+}
+
+li {
+      list-style: none;
+}
+
+a:link {
+      text-decoration: none; 
+}
+
+#navwrap{
+    display: flex;
+    flex-direction: row;
+}
+
+header {
+    height: 30px;
+
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+}
+
+.title h1 {
+    font-size: 60px;
+}
+
+.title h4 {
+    font-size: 26px;
+     
+}
