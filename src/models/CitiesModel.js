@@ -18,7 +18,7 @@ import axios from 'axios';
 class CitiesModel {
   static allEndpoints(){
     // let request = axios.get(`https://wayfarer-db.herokuapp.com/api/cities`)
-    let request = axios.get('http://localhost:3001/api/cities')
+    let request = axios.get('http://localhost:3001/api/cities/all')
     return request
   }
 }

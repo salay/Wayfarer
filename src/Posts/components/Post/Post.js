@@ -6,7 +6,9 @@ class Post extends Component {
       console.log(this.props)
     return(
 
-    <div class="posts" data-posts-index={this.props.city.id}>
+    <div class="posts" 
+    // data-posts-index={this.props.city.id}
+    >
       hi I'm a post
         <div>
         <span>{this.props.title }, </span>
