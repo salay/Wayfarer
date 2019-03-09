@@ -25,7 +25,7 @@ class Nav extends Component {
         UserModel.oneUser(localStorage.id).then( (res) =>  
         { console.log(res.data)
           this.setState ({
-            fullName:  res.data.fullname,
+            username:  res.data.username,
           })
         })
       } 
@@ -39,7 +39,7 @@ class Nav extends Component {
             <h4>Find your way there...</h4>
              <nav id="navwrap">
 
-             Signed in as {this.state.fullName}
+             Signed in as {this.state.username}
              <Logout handleLogOut={this.props.handleLogOut}/>
              <Link to={'/'}>Home</Link>
              <Link to={'/posts'}>Posts</Link>
