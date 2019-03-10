@@ -40,8 +40,8 @@ cities.
 ### Leo
 #### Contributions
 - Worked with Alom to create the backend routes
-![Screenshot of Successful code](../master/assets/leoScreenshot.png)
 - Created functionality that allows a user to update their current city and fullname
+![Screenshot of Successful code](../master/assets/leoScreenshot.png)
 - Worked with Siri to display posts information on the front-end
 #### Challenges
 - Understanding JWT 
