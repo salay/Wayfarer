@@ -65,6 +65,7 @@ cities.
   * sending it to the database
   * sending blank posts
 ![Screenshot of code](../master/assets/AlomScreenShot2.png)
+* Figuring out file structure
 #### Shout Out 
 * Leo - Git expert!
 * Nicolette, Siri, Leo
