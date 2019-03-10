@@ -7,6 +7,7 @@ class PostsModel {
     return request
   }
   static create(userId, createdPost){
+    console.log(userId)
     let request = axios.post(`http://localhost:3001/api/posts/${userId}/newPost`, createdPost)
     return request
   }

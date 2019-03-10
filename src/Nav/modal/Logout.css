@@ -1,0 +1,10 @@
+#logout {
+    background: none;
+    border: none;
+   padding-top: 9.7%;
+   font-size: 26px;
+}
+
+#logout:hover {
+    color: skyblue;
+  }

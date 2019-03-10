@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
-// import CitiesModel from '/Users/default/Desktop/WDI-51/GA Projects/Wayfarer/wayfarer-frontend/src/models/CitiesModel.js'
- 
 // AddPostModal HAS TO BE capitalized. CANNOT be addPostModal. react will not allow this. 
 import UserModel from "../../../models/UserModel"
+import "./userProfile.css"
 class PostsContainer extends Component {
   
     constructor(){
@@ -15,7 +14,6 @@ class PostsContainer extends Component {
         isEditing: false,
         display: "display: 'block'",
         hide: "display: 'none'"
-        // IMAGE
     }
   }
 
@@ -51,12 +49,9 @@ class PostsContainer extends Component {
 
   render(){
       console.log(this.state.username)
-
-
       console.log(this.state.isEditing)
       console.log(localStorage.id)
 
-      if (!this.props.isEditing){
         return ( 
 
       <div id="displayedProfile" style={{display:"block"}}>
@@ -76,29 +71,13 @@ class PostsContainer extends Component {
             Current City: {this.state.currentCity}
         </span>
         <br/>
-
-       <button onClick ={this.openEditors}>Edit</button>
+       <button id="editProfile" onClick ={this.openEditors}>Edit</button>
         </div>
 
         )
-      }
-        else {
-      return(
-        <div id="editingProfile" style={{display: "block"}}>
-        <input placeholder={this.state.username}/>
-        <br/>
-        <input placeholder = {this.state.fullName}/>
-        <br/>
-        <input placeholder ={this.state.email}/>
-        <br/>
-        <input placeholder ={this.state.currentCity} />
-        <br/>
-
-       <button onClick ={this.saveUpdatedProfile}>Save</button>
-        </div>
-      )
-     }
+      
         
+     
     
   }
 }

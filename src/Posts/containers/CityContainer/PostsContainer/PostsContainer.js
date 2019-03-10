@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 // import CitiesModel from '/Users/default/Desktop/WDI-51/GA Projects/Wayfarer/wayfarer-frontend/src/models/CitiesModel.js'
- import PostsRenderBox from '../../components/PostsRenderBox/PostsRenderBox';
+ import PostsRenderBox from '../../../components/PostsRenderBox/PostsRenderBox';
 import "./PostsContainer.css"
-import PostsModel from '../../../models/PostsModel.js'
-import CitiesModel from '../../../models/CitiesModel.js'
+import PostsModel from '../../../../models/PostsModel.js'
+import CitiesModel from '../../../../models/CitiesModel.js'
 import AddPostModal from "./addPostModal/addPostModal.js"
 // AddPostModal HAS TO BE capitalized. CANNOT be addPostModal. react will not allow this. 
 
@@ -13,9 +13,9 @@ class PostsContainer extends Component {
     this.state = {
       posts: [],
       cities: [],
-      title: 'title of the post',
-      location: 'the place',
-      text: 'body of the post',
+      title: 'title postsContainer',
+      location: 'hi',
+      text: 'body postsContainer',
 
     }
   }
@@ -43,8 +43,8 @@ class PostsContainer extends Component {
        })
      })
 
-//find only the posts that belong to the clicked city
 
+//find only the posts that belong to the clicked city
 CitiesModel.cityPosts(this.props.cityName).then( (res) =>  
 { console.log(res.data)
   this.setState ({
@@ -106,19 +106,21 @@ CitiesModel.cityPosts(this.props.cityName).then( (res) =>
 
   onFormSubmit = (event) => {
     console.log(event.target)
+    let title = this.props.title
+    let text = this.state.text
     
     event.preventDefault()
-    let title = this.state.title
-
     let params = {
-      title: this.state.title
+      title: this.state.title,
+      text: this.state.text
     }
-
-    PostsModel.create(params) 
+    console.log(params)
+    PostsModel.create(localStorage.id, params) 
     .then(response => {
       console.log(response.data)
       this.setState({
-        title: ""
+        title: "",
+        text: ""
       })
     })
   }
@@ -135,19 +137,19 @@ CitiesModel.cityPosts(this.props.cityName).then( (res) =>
 
 
 
-  create = (post) => {
-    console.log(post)
+  create = (text) => {
+    console.log(text)
     let createdPost = {
-        body: post,
+        text: text,
         //completed: false
     }
 
     PostsModel.create(localStorage.id, createdPost).then((res) => {
       console.log(res.data)
       console.log(createdPost)
-        let posts = this.state.posts
-        let newPosts = posts.push(res.data)
-        this.setState({newPosts})
+        // let posts = this.state.posts
+        // let newPosts = posts.push(res.data)
+        // this.setState({newPosts})
     })
 }
 
@@ -157,7 +159,7 @@ CitiesModel.cityPosts(this.props.cityName).then( (res) =>
   render(){
       console.log(this.state.posts)
     return (
-     
+
       <div id="postsContainer">
         <PostsRenderBox
           posts={this.state.posts} 
@@ -171,7 +173,8 @@ CitiesModel.cityPosts(this.props.cityName).then( (res) =>
           onFormSubmit = {this.onFormSubmit}
           
           // I think i'm passsing a function in? look above
-          create={ this.create }/>
+         create={ this.create }
+         />
         </div>
       </div>
     )

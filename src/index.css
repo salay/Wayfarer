@@ -34,6 +34,8 @@
 
 body {
   background-image: url('images/path.jpg');
+  background-attachment: fixed;
+  background-size: 100vw;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: fill;

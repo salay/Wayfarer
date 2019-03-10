@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Modal from 'react-modal';
-import '../../../../Nav/modal/modal.css'
+import '../../../../../Nav/modal/modal.css'
 import CitySelector from './CitySelector'
 
 const customStyles = {
@@ -15,17 +15,22 @@ const customStyles = {
 };
 
 class addPostModal extends Component {
+  state = {
+    post: '',
+    text: ''
+  }
 
   constructor() {
     super();
      this.state = {
-       post: 'bubblesWatermelon',
-       title: 'title of the post',
+       
+       title: 'title addPostModal',
        location: 'the place',
-       text: 'body of the post',
+       text: 'body addPostModal',
       modalIsOpen: false,
     };
 
+    
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -46,8 +51,9 @@ class addPostModal extends Component {
   }
 
 
-handleInput = (e) => 
-{ this.setState ({
+handleInput = (e) => {
+e.preventDefault()
+ this.setState ({
  text: e.target.value,
 })
 }
@@ -57,6 +63,20 @@ handleInput2 = (e) =>
 { this.setState ({
   title: e.target.value,
 })
+}
+
+
+
+
+  
+create = (event) => {
+  event.preventDefault();
+  //let title = this.state.title;
+  let text = this.state.text;
+  this.props.create(text);
+  this.setState({
+    text: ''
+  });
 }
 
 
@@ -83,6 +103,12 @@ handleInput2 = (e) =>
       )
     })
 
+
+
+
+
+
+
     console.log("modal for posts is working")
     console.log(this.state)
     return (
@@ -105,16 +131,20 @@ handleInput2 = (e) =>
             </select>
 
 
-            <input placeholder="Title" type="text" name="title" title = "title"
+            <input placeholder="Title" type="text" name="title" 
+            value={ this.state.title }
+            title = {this.props.title}
              onChange={this.handleInput2}/>
 
-            <input placeholder="Description" type="text" name="text" text = "text"
+            <input placeholder="Description" type="text" name="text" 
+            value={ this.state.text }
+             text = {this.props.text}
              onChange={this.handleInput}/>
 
 
 
             <button 
-            onClick={this.props.onFormSubmit}
+            onClick={this.props.create}
             id="modalButton" type="submit" >Create Post</button>
 
             <button id="modalButton" onClick={this.closeModal}>Cancel</button>

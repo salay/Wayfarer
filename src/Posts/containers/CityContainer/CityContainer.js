@@ -7,7 +7,8 @@ class CityContainer extends Component {
   constructor(){
     super()
     this.state = {
-      cities: []
+      cities: [],
+      cityName: ""
     }
   }
 
@@ -27,12 +28,27 @@ class CityContainer extends Component {
     })
   }
 
+
+
+ 
+// getCityName = (e) => {
+//   console.log(e)
+//   console.log(this)
+//   e.preventDefault()
+//   this.setState({
+//     cityName: ""
+//   })
+// }
+
+
+
+
   render(){
       console.log(this.state.cities)
     return (
       <div>
         <CityRenderBox
-          getCityName = {this.props.getCityName}
+        changeCity = {this.props.changeCity}
           cities={this.state.cities} /> {/* passing cities as a prop to the cityrender box. cities is equal to the current state of the cities array which comes from the API */}
       </div>
     )

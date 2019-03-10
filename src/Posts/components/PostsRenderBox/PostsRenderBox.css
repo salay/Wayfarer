@@ -1,4 +1,7 @@
 postsRenderBox {
-    background: navy;
-    color: blue;
+    background: yellow;
+    width: 2em;
+    color: pink;
+
+    color: black
 }

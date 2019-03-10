@@ -3,16 +3,33 @@ import City from '../City/city'
 import "./CityRenderBox.css"
  
 class CityRenderBox extends Component {
-  render(){
 
+  constructor(){
+    super()
+    this.state = {
+  newCity: "San Francisco"
+    }
+  }
+
+  changeCity = (newCity) => {
+    console.log(newCity)
+    this.setState({
+      cityName: newCity
+    })
+    console.log(this.state.cityName)
+  }
+
+  render(){
     let Cities = this.props.cities.map( (theCity) => { // {/* prop passed down from citycontainer which is the array of cities from the API*/}
-      return (                                      //  {/* maps over the cities array and passing unique props to the city.js file */}
+    return (      
+      <div>                                {/* maps over the cities array and passing unique props to the city.js file */}
         <City
-        getCityName = {this.props.getCityName}
+        changeCity = {this.changeCity}
           key={theCity._id}
           city={theCity.city}
           image={theCity.image}
           country= {theCity.country} />
+          </div>
       )
     })
 
@@ -22,7 +39,6 @@ class CityRenderBox extends Component {
         {Cities}  {/* rendering the array above */}
       </div>
     )
-    
   }
 }
 
