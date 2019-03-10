@@ -16,7 +16,7 @@
 ## Wins
 
 
-![Optional Text](../master/assets/images/leoScreenshot.png)
+![Optional Text](../master/assets/leoScreenshot.png)
 
 
 ## Issues
