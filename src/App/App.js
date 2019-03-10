@@ -7,7 +7,6 @@ import { Switch, Route} from 'react-router-dom';
 import UserModel from "../models/UserModel.js";
 import Nav from "../Nav/Nav"
 
-
 class App extends Component {
   state = {
     fullname: '',
@@ -61,7 +60,8 @@ class App extends Component {
     event.preventDefault()
     console.log("this is login in the console. button is clicked")
     //let name = this.state.fullName
-    let username = this.state.username
+    let email = this.state.email
+    //let username = this.state.username
 
     let params = {
       //fullName: this.state.fullName,
@@ -131,7 +131,9 @@ class App extends Component {
       onSignUp={this.onSignUp}
       onSignIn={this.onSignIn}
       />
-          <Switch>
+
+      {/* below- is if true */}
+          <Switch> 
             {/* eexact strict  makes sure url parametrs match */}
               <Route 
               fullname={this.state.fullname}
@@ -155,6 +157,7 @@ class App extends Component {
       onSignUp={this.onSignUp}
       onSignIn={this.onSignIn}
       />
+      {/* Below -is if false */}
           <Switch>
               <Route path="/" exact strict component={Landing}/>
               {/* <Route path="*"   component={<h1>404</h1>}/> */}
