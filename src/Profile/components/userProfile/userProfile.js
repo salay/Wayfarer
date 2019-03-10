@@ -5,6 +5,7 @@ import React, {Component} from 'react'
 import UserModel from "../../../models/UserModel"
 import Modal from 'react-modal';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom'
 class PostsContainer extends Component {
   
     constructor(){
@@ -48,7 +49,7 @@ class PostsContainer extends Component {
     })
   }
 
-
+    // EDIT USER INFO FUNCTION
   handleSubmit = (e) => {
     e.preventDefault();
     let user = {
@@ -65,7 +66,26 @@ class PostsContainer extends Component {
     })
     .catch(error=> console.log(error))
   }
+    // DELETE A USER FROM THE DB
+  handleDelete = (e) => {
+    e.preventDefault();
+    let User = {
+      _id: localStorage.id,
+      currentcity: this.state.currentCity,
+      fullname: this.state.fullName,
+      username: this.state.username,
+      email: this.state.email,
+    }
+    axios.delete(`http://localhost:3001/users/deleteUser`, User)
+    .then(response => {
+    // console.log(response);
+    console.log(User);
+    
+    // })
+    })
+    .catch(error=> console.log(error))
 
+  }
 
 
   
@@ -84,7 +104,7 @@ class PostsContainer extends Component {
   render(){
       
     return (
-     
+
       <div id="userProfile">
         <span>
             Username: {this.state.username}
@@ -103,6 +123,7 @@ class PostsContainer extends Component {
         </span>
         <br/>
         <button onClick={this.openModal}>Edit</button>
+        <button onClick={this.handleDelete}>Delete</button>
        <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
