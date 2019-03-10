@@ -45,7 +45,7 @@ cities.
 - Worked with Siri to display posts information on the front-end
 #### Challenges
 - Understanding JWT 
-- frontend Structure and fetching data from the backend
+- frontend Structure and sending data back to the database
 #### Shout out
 - Isha & Darnell
 #### Moving Forward
