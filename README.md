@@ -19,7 +19,6 @@ cities.
 
 ## Wins
 
-![Screenshot of Successful code](../master/assets/leoScreenshot.png)
 
 
 ### Nicolette
