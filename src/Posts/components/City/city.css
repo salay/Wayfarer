@@ -6,8 +6,9 @@
 }
 
 .city img {
-    width: 300px;
-    height: 300px;
+    width: 310px;
+   
+    padding-bottom: 5em;
 }
 
 .city span {
@@ -15,5 +16,12 @@
 }
 
 .cityName {
-    height: 30px;
+    height: 50px;
+}
+
+.cityBtn {
+    position:relative;
+    top: 3em;
+    background: rgba(50, 50, 50, .9);
+    border: none;
 }

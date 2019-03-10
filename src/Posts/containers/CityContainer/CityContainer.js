@@ -2,15 +2,16 @@ import React, {Component} from 'react'
 import CitiesModel from '../../../models/CitiesModel.js'
 import CityRenderBox from '../../components/CityRenderBox/CityRenderBox';
 
+
 class CityContainer extends Component {
 
   constructor(){
     super()
     this.state = {
-      cities: []
+      cities: [],
+      cityName: ""
     }
   }
-
  
   componentDidMount(){
     this.fetchData()
@@ -32,12 +33,12 @@ class CityContainer extends Component {
     return (
       <div>
         <CityRenderBox
+        changeCity = {this.props.changeCity}
           cities={this.state.cities} /> {/* passing cities as a prop to the cityrender box. cities is equal to the current state of the cities array which comes from the API */}
       </div>
     )
   }
 }
-
 
 export default CityContainer
 

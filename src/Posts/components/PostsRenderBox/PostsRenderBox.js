@@ -6,6 +6,7 @@ class CityRenderBox extends Component {
     let Posts = this.props.posts.map( (thePost) => {
     return (
       <Post
+            cityName={this.props.cityName}
             key={thePost._id}
             city={thePost.location}
             title={thePost.title}

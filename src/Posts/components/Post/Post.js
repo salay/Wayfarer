@@ -1,20 +1,24 @@
 import React, {Component} from 'react'
+import "./Post.css"
 
 
 class Post extends Component {
   render(){
-      console.log(this.props)
+      console.log(this.props.cityName)
     return(
 
-    <div class="posts" 
-    // data-posts-index={this.props.city.id}
+    <div id="onePost" 
+     data-posts-index={this.props.city.id}
     >
-      hi I'm a post
+    
         <div>
+        {/* <span> { this.props.city}</span>
+        <br/> */}
+        
         <span>{this.props.title }, </span>
         <div> { this.props.text}</div>
         </div>
-        {/* <img src = {this.props.image} /> */}
+        <img src = {this.props.image} />
       </div> 
     )
   }

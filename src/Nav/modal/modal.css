@@ -1,8 +1,20 @@
-#signUpButton {
-    background-color: transparent;
+.signUpButton {
+    /* background-color: black;
     margin: 10px;
-    height:30px;
+    height:30px; */
+    background: none;
+    border: none;
+     padding-top: 1.85em;
+   font-size: 26px;
+   color: white;
+   display: flex;
+   justify-content: space-around;
+   margin-right: 4em;
 }
+
+.signUpButton:hover {
+    color: skyblue;
+  }
 
 #modalButton {
     margin: 10px 0;

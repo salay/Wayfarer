@@ -56,7 +56,7 @@ class ModalSignIn extends Component {
     console.log(this.state)
     return (
       <div>
-        <button id="signUpButton" onClick={this.openModal}>Sign In!</button>
+        <button className="signUpButton" onClick={this.openModal}>Sign In!</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -70,9 +70,6 @@ class ModalSignIn extends Component {
       
             <input placeholder="Email" type="text" name="email"
               onChange={this.props.handleInput}/>
-
-{/* 
-            <input placeholder="User Name" type="text" name="username" onChange={this.props.handleInput}/>     */}
 
             <input placeholder="Password" type="password" password="password" name="password"
              onChange={this.props.handleInput}/>

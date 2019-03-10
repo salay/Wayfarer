@@ -35,15 +35,17 @@ class Nav extends Component {
        if (this.props.isLoggedIn){
         return (
             <header id="headWrap">
+            <div className="title">
             <h1>Pathfinder</h1>
             <h4>Find your way there...</h4>
+            </div>
              <nav id="navwrap">
 
-             Signed in as {this.state.username}
-             <Logout handleLogOut={this.props.handleLogOut}/>
-             <Link to={'/'}>Home</Link>
-             <Link to={'/posts'}>Posts</Link>
-             <Link to={'/profile'}>Profile</Link>
+            <h4 id ="signedInAs">Signed in as {this.state.fullName}</h4> 
+             <Logout handleLogOut={this.props.handleLogOut}  className="link"/>
+             <Link to={'/'} className="link">Home</Link>
+             <Link to={'/posts'} className="link">Posts</Link>
+             <Link to={'/profile'} className="link">Profile</Link>
              </nav>
              
             </header>
@@ -51,11 +53,12 @@ class Nav extends Component {
        } else {
         return (
             <header id="headWrap">
-            <div class="title">
+            <div className="title">
             <h1>Pathfinder</h1>
             <h4>Find your way there...</h4>
             </div>
              <nav id="navwrap">
+             <Link to={'/'} className="link" id="home">Home</Link>
                 <ModalSignIn handleInput = {this.props.handleInput} 
                  onSignIn={this.props.onSignIn}/>
                   <ModalSignUp  handleInput={this.props.handleInput}

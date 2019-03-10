@@ -9,10 +9,10 @@
       top: 30px;
       z-index: 1;
       padding: 3em; */
+      background: rgba(50,50,50, .85);
  } 
  
- 
-
+  
 nav a {
       display: inline-block;
       padding: 20px;
@@ -37,16 +37,44 @@ header {
 
 }
 
+
 .title {
     display: flex;
     flex-direction: column;
-}
-
-.title h1 {
-    font-size: 60px;
-}
-
-.title h4 {
+    padding: 1em 0 0 1em;
+  }
+  
+  .title h1 {
+    font-size: 64px;
+  }
+  
+  .title h4 {
     font-size: 26px;
      
-}
+  }
+
+  .link {
+    text-decoration: none;
+    background: none;
+    color: white;
+    height: 30px;
+    font-size: 26px;
+  }
+  
+  
+  .link:hover {
+    color: skyblue;
+  }
+  
+
+  #signedInAs {
+    font-size: 26px;
+    padding-top: 3.6%;
+  }
+
+
+  #home {
+      margin-top: 4%;
+      padding-right: 4em;
+      font-size: 28px;
+  }

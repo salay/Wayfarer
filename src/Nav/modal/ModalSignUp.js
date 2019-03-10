@@ -52,7 +52,7 @@ class ModalSignUp extends Component {
     console.log(this.state)
     return (
       <div>
-        <button id="signUpButton" onClick={this.openModal}>Sign Up!</button>
+        <button className="signUpButton" onClick={this.openModal}>Sign Up!</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

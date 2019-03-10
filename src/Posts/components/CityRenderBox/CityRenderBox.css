@@ -1,6 +1,6 @@
 #cityRenderBox {
  color: navy; 
- background: lightsteelblue;
+ background: rgb(140, 143, 147);
  /* opacity: .7; */
  overflow: scroll;
  display: flex;

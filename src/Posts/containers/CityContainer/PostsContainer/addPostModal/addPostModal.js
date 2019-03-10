@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Modal from 'react-modal';
-import '../../../../Nav/modal/modal.css'
+import '../../../../../Nav/modal/modal.css'
 import CitySelector from './CitySelector'
 
 const customStyles = {
@@ -15,13 +15,22 @@ const customStyles = {
 };
 
 class addPostModal extends Component {
+  state = {
+    post: '',
+    text: ''
+  }
 
   constructor() {
     super();
      this.state = {
+       
+       title: 'title addPostModal',
+       location: 'the place',
+       text: 'body addPostModal',
       modalIsOpen: false,
     };
 
+    
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -42,6 +51,49 @@ class addPostModal extends Component {
   }
 
 
+handleInput = (e) => {
+e.preventDefault()
+ this.setState ({
+ text: e.target.value,
+})
+}
+
+
+handleInput2 = (e) => 
+{ this.setState ({
+  title: e.target.value,
+})
+}
+
+
+
+
+  
+create = (event) => {
+  event.preventDefault();
+  //let title = this.state.title;
+  let text = this.state.text;
+  this.props.create(text);
+  this.setState({
+    text: ''
+  });
+}
+
+
+
+// onFormSubmit = (event) => {
+//   event.preventDefault()
+//   let post = this.state.post
+//   this.props.create(localStorage.id, post)
+//   this.setState({
+//     post: ""
+//   })
+//   console.log(post)
+//   console.log(event.target)
+// }
+
+
+
   render(){
    let Cities = this.props.cities.map( (theCity) => { 
         return (                                   
@@ -50,6 +102,11 @@ class addPostModal extends Component {
           city={theCity.city} />
       )
     })
+
+
+
+
+
 
 
     console.log("modal for posts is working")
@@ -66,16 +123,29 @@ class addPostModal extends Component {
         >
 
           <h2 ref={subtitle => this.subtitle = subtitle}>Add a Post!</h2>
-          <form id="formwrap">
-            <select   placeholder="City" name="city">
+
+          <form id="formwrap" >
+
+            <select   placeholder="City" name="location" style={{color:"black"}}>
                 {Cities}
             </select>
-            <input placeholder="Title" type="text" name="title"
-             onChange={this.props.handleInput}/>
-            <input placeholder="Description" type="text" name="text"
-             onChange={this.props.handleInput}/>
 
-            <button id="modalButton" onClick={ this.props.onSignIn }>Create Post</button>
+
+            <input placeholder="Title" type="text" name="title" 
+            value={ this.state.title }
+            title = {this.props.title}
+             onChange={this.handleInput2}/>
+
+            <input placeholder="Description" type="text" name="text" 
+            value={ this.state.text }
+             text = {this.props.text}
+             onChange={this.handleInput}/>
+
+
+
+            <button 
+            onClick={this.props.create}
+            id="modalButton" type="submit" >Create Post</button>
 
             <button id="modalButton" onClick={this.closeModal}>Cancel</button>
           </form>
