@@ -11,6 +11,7 @@ cities.
 * Bcrypt
 * Express
 * Axios
+* JWT
 
 
 ![alt text](Wayfarer-Pathfinder-Code-Snippet.png "Description goes here")
