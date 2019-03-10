@@ -11,20 +11,22 @@ class CityRenderBox extends Component {
     }
   }
 
-  changeCity = (newCity) => {
-    console.log(newCity)
-    this.setState({
-      cityName: newCity
-    })
-    console.log(this.state.cityName)
-  }
+  // changeCity = (newCity) => {
+  //   console.log(newCity)
+  //   this.setState({
+  //     cityName: newCity
+  //   })
+  //   console.log(this.state.cityName)
+  // }
 
   render(){
-    let Cities = this.props.cities.map( (theCity) => { // {/* prop passed down from citycontainer which is the array of cities from the API*/}
+    let Cities = this.props.cities.map( (theCity) => 
+    { 
+       {/* prop passed down from citycontainer which is the array of cities from the API*/}
     return (      
       <div>                                {/* maps over the cities array and passing unique props to the city.js file */}
         <City
-        changeCity = {this.changeCity}
+        changeCity = {this.props.changeCity}
           key={theCity._id}
           city={theCity.city}
           image={theCity.image}

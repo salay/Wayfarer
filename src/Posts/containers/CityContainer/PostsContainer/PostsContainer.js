@@ -20,21 +20,14 @@ class PostsContainer extends Component {
     }
   }
 
-
   componentDidMount(){
     this.fetchData()
   }
 
 
   fetchData() {
-    // PostsModel.allEndpoints().then( (res) =>  
-    // { console.log(res.data)
-    //   this.setState ({
-    //     posts: res.data,  
-    //     post: ''
-    //   })
-    // })
 
+    console.log(this.props.cityName)
     CitiesModel.allEndpoints().then( (res) =>  
      { console.log(res.data)
        this.setState ({
@@ -158,11 +151,14 @@ CitiesModel.cityPosts(this.props.cityName).then( (res) =>
 
   render(){
       console.log(this.state.posts)
+
+    console.log(this.props.cityName)
     return (
 
       <div id="postsContainer">
         <PostsRenderBox
           posts={this.state.posts} 
+           cityName = {this.props.cityName}
           /> 
         <div id="addPostButton">
         {/* addpostmodal component is the form where we add the posts */}

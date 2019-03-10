@@ -4,7 +4,7 @@ import "./Post.css"
 
 class Post extends Component {
   render(){
-      console.log(this.props)
+      console.log(this.props.cityName)
     return(
 
     <div id="onePost" 

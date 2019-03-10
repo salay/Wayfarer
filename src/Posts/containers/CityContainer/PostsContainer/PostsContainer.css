@@ -2,7 +2,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background: lightsteelblue;
+    background:  #462a26;
+    /* background: rgba(50, 50, 50, .1); */
+    padding-bottom: 3em;
 
    
 }

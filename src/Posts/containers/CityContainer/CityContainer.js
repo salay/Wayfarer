@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import CitiesModel from '../../../models/CitiesModel.js'
 import CityRenderBox from '../../components/CityRenderBox/CityRenderBox';
 
+
 class CityContainer extends Component {
 
   constructor(){
@@ -11,7 +12,6 @@ class CityContainer extends Component {
       cityName: ""
     }
   }
-
  
   componentDidMount(){
     this.fetchData()
@@ -28,21 +28,6 @@ class CityContainer extends Component {
     })
   }
 
-
-
- 
-// getCityName = (e) => {
-//   console.log(e)
-//   console.log(this)
-//   e.preventDefault()
-//   this.setState({
-//     cityName: ""
-//   })
-// }
-
-
-
-
   render(){
       console.log(this.state.cities)
     return (
@@ -54,7 +39,6 @@ class CityContainer extends Component {
     )
   }
 }
-
 
 export default CityContainer
 
