@@ -16,7 +16,7 @@
 ## Wins
 
 
-![Optional Text](../master/src/images/path.jpg)
+![Screenshot of Successful code](../master/assets/leoScreenshot.png)
 
 
 ## Issues
