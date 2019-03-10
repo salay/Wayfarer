@@ -10,7 +10,7 @@
 `code snippet`
 
 
-![alt text](./Wayfarer-Pathfinder-Code-Snippet.png "Description goes here")
+![alt text](Wayfarer-Pathfinder-Code-Snippet.png "Description goes here")
 
 
 ## Wins
