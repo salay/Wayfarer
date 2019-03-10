@@ -3,11 +3,14 @@
 ## Nicolette, Siri, Leo, Alom
 
 ## Overview
-
-
+Pathfinder is a website that allows users to share travel tips for places they have visited. Users may also look up posts by selected 
+cities.
 
 ## Technologies Used
-`code snippet`
+* React
+* Bcrypt
+* Express
+* Axios
 
 
 ![alt text](Wayfarer-Pathfinder-Code-Snippet.png "Description goes here")
@@ -15,15 +18,7 @@
 
 ## Wins
 
-
 ![Screenshot of Successful code](../master/assets/leoScreenshot.png)
-
-
-## Issues
-
-
-
-
 
 
 ### Nicolette
@@ -55,4 +50,22 @@
 #### Moving Forward
 - Crystal Clear understanding of all aspects of the project
 
+### Alom
+#### Contributions
+* React Carousel and modal
+![Screenshot of code](../master/assets/AlomScreenShot1.png)
+* Pair programmed with Leo on backend routes and crud functions
+* Pair programmed with Siri on trying to connect part of the backend to the frontend
+#### Challenges
+* Figuring out how to reference data correctly
+* Create a post function        
+  * capturing the input in the console
+  * associating it with a user
+  * sending it to the database
+  * sending blank posts
+![Screenshot of code](../master/assets/AlomScreenShot2.png)
+#### Shout Out 
+* Leo - Git expert!
+* Nicolette, Siri, Leo
+* Paris - Helped explain how create a post worked
 
