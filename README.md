@@ -14,7 +14,7 @@ cities.
 * JWT
 
 
-![alt text](../master/Wayfarer-Pathfinder-Code-Snippet.png)
+![alt text](../master/assets/Wayfarer-Pathfinder-Code-Snippet.png)
 
 
 ## Wins
