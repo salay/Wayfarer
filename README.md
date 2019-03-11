@@ -1,4 +1,4 @@
-# Pathfinder-frontend
+# Pathfinder
 
 ## Nicolette, Siri, Leo, Alom
 
