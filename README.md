@@ -16,10 +16,6 @@ cities.
 ![Screenshot Siri](../master/assets/Wayfarer-Pathfinder-Code-Snippet.png)
 
 
-## Wins
-
-
-
 ### Nicolette
 #### Contributions
 - Pair programed with Siri the Nav modal to create functionality to sign in and sign out of our app. 
