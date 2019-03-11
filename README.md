@@ -84,3 +84,5 @@ cities.
 * Paris - Helped explain how create a post worked
 * Brock and Dalton
 
+### Moving Forward
+* Make sure file structure is set up correctly.
