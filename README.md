@@ -13,8 +13,25 @@ cities.
 * Axios
 * JWT
 
-![Screenshot Siri](../master/assets/Wayfarer-Pathfinder-Code-Snippet.png)
 
+### Siri
+
+#### Contributions
+- Pair programmed with Nicolette to get the sign up and sign in functionality working. 
+- Was able to implement the get method on frontend to display cities on the posts page and profile information on profile page
+- Worked with Alom to attempt to implement the create method to create a post
+![Screenshot Siri](../master/assets/Wayfarer-Pathfinder-Code-Snippet.png)
+ 
+#### Challenges
+- wasn't able to create a post
+- wasn't able figure out how to get posts that belonged to a particular city to show when user clicked on that city
+
+#### Shout out
+- Leo for Git help!
+- Dalton for help with JWT
+
+#### Moving Forward
+- understand how data moves in react and how to implement backend methods on front end.
 
 ### Nicolette
 #### Contributions
