@@ -13,8 +13,7 @@ cities.
 * Axios
 * JWT
 
-
-![alt text](../master/assets/Wayfarer-Pathfinder-Code-Snippet.png)
+![Screenshot Siri](../master/assets/Wayfarer-Pathfinder-Code-Snippet.png)
 
 
 ## Wins
