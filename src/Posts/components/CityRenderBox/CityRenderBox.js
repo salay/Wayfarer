@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
 import City from '../City/city'
 import "./CityRenderBox.css"
- 
+  
 class CityRenderBox extends Component {
 
   constructor(){
     super()
     this.state = {
-  newCity: "San Francisco"
+  //newCity: "San Francisco"
     }
   }
 

@@ -7,7 +7,7 @@ class Posts extends Component {
   constructor(){
     super()
     this.state = {
-      cityName: "San Francisco"
+      cityName: "Oakland"
     }
   }
 

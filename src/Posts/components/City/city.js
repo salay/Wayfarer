@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import "./city.css"
-
+ 
 class City extends Component {
   constructor(){
     super()
@@ -15,9 +15,9 @@ class City extends Component {
   getACity = (e) => {
     e.preventDefault()
     console.log(e)
-    this.setState({
-      newCity: this.props.city
-    })
+    // this.setState({
+    //   newCity: this.props.city
+    // })
     console.log(this.props.city)
     console.log(this.props.cityName)
     console.log(this.state.newCity)

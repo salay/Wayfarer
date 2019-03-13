@@ -11,7 +11,7 @@ class Nav extends Component {
     constructor(){
         super()
         this.state = {
-            fullName: "Bobby Bob",
+            fullName: "watermelons",
             // IMAGE
         }
       }

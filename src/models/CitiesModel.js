@@ -8,7 +8,10 @@ class CitiesModel {
   }
 
   static cityPosts(locationName){
+    console.log("here are the city posts")
+    console.log(locationName)
     let request = axios.get(`http://localhost:3001/api/cities/${locationName}`)
+    console.log(request)
     return request
   }
 }

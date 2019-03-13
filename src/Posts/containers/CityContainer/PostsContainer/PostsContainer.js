@@ -8,54 +8,56 @@ import AddPostModal from "./addPostModal/addPostModal.js"
 // AddPostModal HAS TO BE capitalized. CANNOT be addPostModal. react will not allow this. 
 
 class PostsContainer extends Component {
-  constructor(){
-    super()
-    this.state = {
-      posts: [],
-      cities: [],
-      title: 'title postsContainer',
-      location: 'hi',
-      text: 'body postsContainer',
-
-    }
+  state = {
+    posts: [],
+    cities: [],
+    title: 'title postsContainer',
+    location: 'hi',
+    text: 'body postsContainer',
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.fetchData()
+     
   }
 
+  componentDidUpdate() {
+    //this.getPostsForCity()
+  }
 
   fetchData() {
-
     console.log(this.props.cityName)
-    CitiesModel.allEndpoints().then( (res) =>  
-     { console.log(res.data)
-       this.setState ({
-         cities: res.data,  
-         city: ''
-       })
-     })
+    CitiesModel.allEndpoints().then( (res) => { 
+      console.log(res.data)
+      
+      this.setState({
+        cities: res.data,  
+        city: ''
+      })
+    })
+  }
 
 
-//find only the posts that belong to the clicked city
-CitiesModel.cityPosts(this.props.cityName).then( (res) =>  
-{ console.log(res.data)
-  this.setState ({
-    posts: res.data,  
-    post: ''
-  })
-})
-  
 
-  } 
-
+  getPostsForCity() {
+    if(this.props.city != this.state.location) {
+    CitiesModel.cityPosts(this.props.cityName).then( (res) =>  { 
+      console.log(res.data)
+      this.setState ({
+        posts: res.data,  
+        post: ''
+      })
+    })
+   }
+  }
 
   handleInput = (event) => {
-    console.log(event.target.value)
-     this.setState({
-       [event.target.name]: event.target.value
-     })
-   }
+    console.log('name ', event.target.name)
+    console.log('value ', event.target.value)
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
 
     // let title = this.state.title
     // let text = this.state.text
@@ -82,7 +84,7 @@ CitiesModel.cityPosts(this.props.cityName).then( (res) =>
 
 
 
-  //  onFormSubmit = (event) => {
+  //  handleSubmit = (event) => {
   //   console.log(event.target)
     
   //   event.preventDefault()
@@ -97,24 +99,22 @@ CitiesModel.cityPosts(this.props.cityName).then( (res) =>
   // }
 
 
-  onFormSubmit = (event) => {
-    console.log(event.target)
-    let title = this.props.title
-    let text = this.state.text
-    
+  handleSubmit = (event) => {
     event.preventDefault()
-    let params = {
-      title: this.state.title,
-      text: this.state.text
+
+    console.log('Text', this.state.text)
+    let createdPost = {
+        text: this.state.text,
+        title: this.state.title,
+        location: this.state.location
     }
-    console.log(params)
-    PostsModel.create(localStorage.id, params) 
-    .then(response => {
-      console.log(response.data)
-      this.setState({
-        title: "",
-        text: ""
-      })
+
+    PostsModel.create(localStorage.id, createdPost).then((res) => {
+      console.log(res.data)
+      console.log(createdPost)
+        // let posts = this.state.posts
+        // let newPosts = posts.push(res.data)
+        // this.setState({posts: newPosts})
     })
   }
 
@@ -128,55 +128,33 @@ CitiesModel.cityPosts(this.props.cityName).then( (res) =>
   //   console.log(this.state.post)
   // }
 
-
-
-  create = (text) => {
-    console.log(text)
-    let createdPost = {
-        text: text,
-        //completed: false
-    }
-
-    PostsModel.create(localStorage.id, createdPost).then((res) => {
-      console.log(res.data)
-      console.log(createdPost)
-        // let posts = this.state.posts
-        // let newPosts = posts.push(res.data)
-        // this.setState({newPosts})
-    })
-}
-
-
-
-
   render(){
-      console.log(this.state.posts)
-
+    console.log(this.state.posts)
     console.log(this.props.cityName)
     return (
-
       <div id="postsContainer">
         <PostsRenderBox
           posts={this.state.posts} 
            cityName = {this.props.cityName}
-          /> 
+        /> 
         <div id="addPostButton">
-        {/* addpostmodal component is the form where we add the posts */}
-        <AddPostModal handleInput = {this.props.handleInput}
+          {/* addpostmodal component is the form where we add the posts */}
+          <AddPostModal 
+          //handleINput manages the state of input 
+            handleInput={this.handleInput}
             // the cities are the dropdown selector in the form 
-          cities={this.state.cities} 
-
-          onFormSubmit = {this.onFormSubmit}
-          
-          // I think i'm passsing a function in? look above
-         create={ this.create }
-         />
+            cities={this.state.cities} 
+            // I think i'm passsing a function in? look above
+            onSubmit={this.handleSubmit}
+            title={ this.state.title }
+            text={ this.state.text }
+            location={this.state.location }
+          />
         </div>
       </div>
     )
   }
 }
-
 
 export default PostsContainer
 

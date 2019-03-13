@@ -16,101 +16,32 @@ const customStyles = {
 
 class addPostModal extends Component {
   state = {
-    post: '',
-    text: ''
+    modalIsOpen: false,
   }
-
-  constructor() {
-    super();
-     this.state = {
-       
-       title: 'title addPostModal',
-       location: 'the place',
-       text: 'body addPostModal',
-      modalIsOpen: false,
-    };
-
-    
-    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-  }
-  
 
   openModal = () => {
     this.setState({modalIsOpen: true});
   }
 
-  afterOpenModal() {
+  afterOpenModal = () => {
     // references are now sync'd and can be accessed.
     this.subtitle.style.color = '#f00';
   }
 
-  closeModal() {
+  closeModal = () => {
     this.setState({modalIsOpen: false});
   }
 
-
-handleInput = (e) => {
-e.preventDefault()
- this.setState ({
- text: e.target.value,
-})
-}
-
-
-handleInput2 = (e) => 
-{ this.setState ({
-  title: e.target.value,
-})
-}
-
-
-
-
-  
-create = (event) => {
-  event.preventDefault();
-  //let title = this.state.title;
-  let text = this.state.text;
-  this.props.create(text);
-  this.setState({
-    text: ''
-  });
-}
-
-
-
-// onFormSubmit = (event) => {
-//   event.preventDefault()
-//   let post = this.state.post
-//   this.props.create(localStorage.id, post)
-//   this.setState({
-//     post: ""
-//   })
-//   console.log(post)
-//   console.log(event.target)
-// }
-
-
-
   render(){
-   let Cities = this.props.cities.map( (theCity) => { 
-        return (                                   
+    let Cities = this.props.cities.map( (theCity) => { 
+      return (                                   
         <CitySelector
           key={theCity._id}
-          city={theCity.city} />
+          city={theCity.city}
+        />
       )
     })
 
-
-
-
-
-
-
-    console.log("modal for posts is working")
-    console.log(this.state)
     return (
       <div>
         <button id="addPostButton" onClick={this.openModal}>+</button>
@@ -124,29 +55,32 @@ create = (event) => {
 
           <h2 ref={subtitle => this.subtitle = subtitle}>Add a Post!</h2>
 
-          <form id="formwrap" >
-
-            <select   placeholder="City" name="location" style={{color:"black"}}>
-                {Cities}
+          <form id="formwrap" onSubmit={ this.props.onSubmit }>
+            <select placeholder="City" name="location" style={{color:"black"}} onChange={ this.props.handleInput }
+               location={ this.props.location } value={ this.props.location } >
+                <option> Select a City</option>
+                { Cities }
             </select>
 
+            <input 
+              placeholder="Title" 
+              type="text" 
+              name="title" 
+              onChange={ this.props.handleInput }
+              value={ this.props.title }
+              title={ this.props.title }
+            />
 
-            <input placeholder="Title" type="text" name="title" 
-            value={ this.state.title }
-            title = {this.props.title}
-             onChange={this.handleInput2}/>
+            <input 
+              placeholder="Description" 
+              type="text" 
+              name="text" 
+              onChange={ this.props.handleInput }
+              value={ this.props.text }
+              text={ this.props.text }
+            />
 
-            <input placeholder="Description" type="text" name="text" 
-            value={ this.state.text }
-             text = {this.props.text}
-             onChange={this.handleInput}/>
-
-
-
-            <button 
-            onClick={this.props.create}
-            id="modalButton" type="submit" >Create Post</button>
-
+            <input type="submit" id="modalButton" value="Create Post" style={{color: 'white'}} />
             <button id="modalButton" onClick={this.closeModal}>Cancel</button>
           </form>
         </Modal>

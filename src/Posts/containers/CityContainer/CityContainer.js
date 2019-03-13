@@ -8,8 +8,7 @@ class CityContainer extends Component {
   constructor(){
     super()
     this.state = {
-      cities: [],
-      cityName: ""
+      cities: []
     }
   }
  
